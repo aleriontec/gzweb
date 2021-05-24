@@ -1,0 +1,92 @@
+<?xml version="1.0" ?>
+<sdf version='1.7'>
+  <model name='wind_turbine_blades'>
+    <joint name='base' type='fixed'>
+      <pose relative_to='__model__'>0 0 0 0 -0 0</pose>
+      <parent>world</parent>
+      <child>pole</child>
+    </joint>
+    <link name='pole'>
+      <pose relative_to='base'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>20 0 25.08 0 0 -1.5708</pose>
+        <mass>2</mass>
+        <inertia>
+          <ixx>1259.01</ixx>
+          <ixy>1</ixy>
+          <ixz>1</ixz>
+          <iyy>1259.01</iyy>
+          <iyz>1</iyz>
+          <izz>1.001</izz>
+        </inertia>
+      </inertial>
+      <collision name='pole_collision'>
+        <pose>20 0 0 0 0 -1.5708</pose>
+        <geometry>
+          <mesh>
+            <scale>2 2 2</scale>
+            <uri>file://wtg/meshes/wind_turbine_pole.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='pole_fixed_joint_lump__blades_collision_1'>
+        <pose>20 0 50.16 0 0 -1.5708</pose>
+        <geometry>
+          <mesh>
+            <scale>2 2 2</scale>
+            <uri>file://wtg/meshes/wind_turbine_blades.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='pole_visual'>
+        <pose>20 0 0 0 0 -1.5708</pose>
+        <geometry>
+          <mesh>
+            <scale>2 2 2</scale>
+            <uri>file://wtg/meshes/wind_turbine_pole.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/White</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <visual name='pole_fixed_joint_lump__blades_visual_visual_1'>
+        <pose>20 0 50.16 0 0 -1.5708</pose>
+        <geometry>
+          <mesh>
+            <scale>2 2 2</scale>
+            <uri>file://wtg/meshes/wind_turbine_blades.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/White</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <velocity_decay/>
+      <gravity>0</gravity>
+      <velocity_decay/>
+    </link>
+  </model>
+</sdf>
